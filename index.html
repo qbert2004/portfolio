@@ -109,12 +109,42 @@
   </div>
 
   <!-- VIDEO -->
-  <div class="video-wrap reveal">
-    <div class="video-label">My Introduction</div>
-    <video controls poster="photo.jpg">
-      <source src="5267211870200171871.mp4" type="video/mp4">
-      Your browser does not support video.
-    </video>
+  <div class="video-cinematic reveal">
+    <div class="video-cinematic-inner">
+      <div class="video-cinematic-left">
+        <div class="vc-label">Introduction</div>
+        <h3 class="vc-title">A few words<br>about <em>myself</em></h3>
+        <p class="vc-desc">A short personal introduction — my academic background, research interests, and vision for the intersection of diplomacy and technology.</p>
+        <div class="vc-stats">
+          <div class="vc-stat"><span class="vc-stat-n">4th</span><span class="vc-stat-l">Year</span></div>
+          <div class="vc-stat"><span class="vc-stat-n">3</span><span class="vc-stat-l">Languages</span></div>
+          <div class="vc-stat"><span class="vc-stat-n">IR</span><span class="vc-stat-l">Specialization</span></div>
+        </div>
+      </div>
+      <div class="video-cinematic-right">
+        <div class="vc-frame">
+          <video id="mainVideo" src="5267211870200171871.mp4" preload="metadata"></video>
+          <div class="vc-overlay" id="vcOverlay">
+            <button class="vc-play-btn" id="vcPlayBtn" aria-label="Play video">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="vc-progress-bar"><div class="vc-progress-fill" id="vcProgress"></div></div>
+          <div class="vc-bottom-bar">
+            <span class="vc-time" id="vcTime">0:00</span>
+            <div class="vc-controls">
+              <button class="vc-ctrl" id="vcMute" aria-label="Mute">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+              </button>
+              <button class="vc-ctrl" id="vcFull" aria-label="Fullscreen">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="vc-corner-label">merey mautova · 2025</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -127,16 +157,17 @@
 
   <div class="projects-grid">
 
-    <!-- Task 1: Power BI Military Expenditure -->
-    <div class="project-card reveal">
+    <!-- Task 1 -->
+    <div class="project-card reveal" onclick="openModal('modal01')">
       <div class="project-img">
         <img src="таск1.png" alt="Power BI Military Expenditure % of GDP">
         <div class="project-overlay">Power BI · Task 01</div>
+        <div class="project-open-hint">View Report →</div>
       </div>
       <div class="project-info">
         <div class="project-tag">Power BI · Data Visualization · 2025</div>
         <h3>Military Expenditure % of GDP</h3>
-        <p>Built a multi-visual Power BI dashboard analyzing global military spending as % of GDP across 100+ countries. Includes world map, pie chart, bar chart ranking, and AI Q&A panel. Key insight: Ukraine's military spending rose sharply in 2014–2015, coinciding with the annexation of Crimea.</p>
+        <p>Multi-visual Power BI dashboard analyzing global military spending as % of GDP across 100+ countries. World map, pie chart, bar chart ranking, and AI Q&A panel.</p>
         <div class="project-meta">
           <span>Role: Lead Analyst & Designer</span>
           <span>Tool: Microsoft Power BI</span>
@@ -144,16 +175,17 @@
       </div>
     </div>
 
-    <!-- Task 2: Ireland Power BI -->
-    <div class="project-card reveal">
+    <!-- Task 2 -->
+    <div class="project-card reveal" onclick="openModal('modal02')">
       <div class="project-img">
         <img src="Снимок%20экрана%202026-02-28%20в%2017.43.50.png" alt="Ireland Military & Economic Dashboard">
         <div class="project-overlay">Power BI · Task 02</div>
+        <div class="project-open-hint">View Report →</div>
       </div>
       <div class="project-info">
         <div class="project-tag">Power BI · Economic Analysis · 2025</div>
         <h3>Ireland: Military & Economic Dashboard</h3>
-        <p>Analyzed the correlation between military expenditure, high-tech exports, FDI inflows, and GDP growth in Ireland (1960–2024). Key metrics: Military Expenditure 0.24% GDP, GDP Growth 2.60% in 2024. Visualized structural economic shifts through interactive time-series charts.</p>
+        <p>Correlation analysis of military expenditure, high-tech exports, FDI inflows, and GDP growth in Ireland (1960–2024). Military Expenditure: 0.24% GDP. GDP Growth: 2.60% in 2024.</p>
         <div class="project-meta">
           <span>Role: Data Analyst</span>
           <span>Tool: Microsoft Power BI</span>
@@ -161,16 +193,17 @@
       </div>
     </div>
 
-    <!-- Task 3: Miro Leadership -->
-    <div class="project-card reveal">
+    <!-- Task 3 -->
+    <div class="project-card reveal" onclick="openModal('modal03')">
       <div class="project-img">
         <img src="таск2.png" alt="Miro Leadership Portrait Analysis">
         <div class="project-overlay">Miro Board · Task 03</div>
+        <div class="project-open-hint">View Report →</div>
       </div>
       <div class="project-info">
         <div class="project-tag">Miro · Leadership Analysis · 2025</div>
         <h3>International Leader Portrait Analysis</h3>
-        <p>Created a Miro board mapping the profile of an ideal international leader. Identified core traits: Strategic, Adaptive, Ethical, Decisive, Competent, Communicative, Responsible, Diplomatic, Analytical. Findings compared against Adaptive and Transformational Leadership theories.</p>
+        <p>Miro board mapping the ideal international leader profile. Core traits: Strategic, Adaptive, Ethical, Decisive, Competent, Communicative, Responsible, Diplomatic, Analytical.</p>
         <div class="project-meta">
           <span>Role: Researcher & Analyst</span>
           <span>Tool: Miro · Leadership Theory</span>
@@ -178,17 +211,18 @@
       </div>
     </div>
 
-    <!-- Task 4: Briefing Note Paris -->
-    <div class="project-card reveal">
+    <!-- Task 4 -->
+    <div class="project-card reveal" onclick="openModal('modal04')">
       <div class="project-img placeholder-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
-        <div class="placeholder-icon">🇫🇷</div>
-        <div style="font-family:'DM Mono',monospace;font-size:11px;color:#c4a882;letter-spacing:0.1em;margin-top:8px;">U.S. DEPT. OF STATE</div>
+        <div class="placeholder-flag">FR</div>
+        <div class="placeholder-sub">U.S. DEPT. OF STATE</div>
         <div class="project-overlay">Briefing Note · Task 04</div>
+        <div class="project-open-hint">View Report →</div>
       </div>
       <div class="project-info">
         <div class="project-tag">Diplomatic Writing · OSINT · 2026</div>
         <h3>Briefing Note: Paris Protest Security Assessment</h3>
-        <p>Authored a formal U.S. Department of State Briefing Note on security risks in Paris during government reform protests. Used OSINT monitoring (BBC, France24, Twitter, Reddit), AI-based scenario forecasting, and diplomatic recommendations. Signed as Senior Political Analyst, Bureau of South and Central Asian Affairs.</p>
+        <p>Formal U.S. Department of State Briefing Note on security risks in Paris during government reform protests. OSINT monitoring, AI-based scenario forecasting, and diplomatic recommendations.</p>
         <div class="project-meta">
           <span>Role: Senior Political Analyst</span>
           <span>Tool: OSINT · AI Forecasting</span>
@@ -196,17 +230,18 @@
       </div>
     </div>
 
-    <!-- Task 5: Briefing Note Ireland -->
-    <div class="project-card reveal">
+    <!-- Task 5 -->
+    <div class="project-card reveal" onclick="openModal('modal05')">
       <div class="project-img placeholder-img" style="background: linear-gradient(135deg, #0d2137, #1a3a2a);">
-        <div class="placeholder-icon">🇮🇪</div>
-        <div style="font-family:'DM Mono',monospace;font-size:11px;color:#c4a882;letter-spacing:0.1em;margin-top:8px;">POLITICAL ANALYSIS</div>
+        <div class="placeholder-flag">IE</div>
+        <div class="placeholder-sub">POLITICAL ANALYSIS</div>
         <div class="project-overlay">Briefing Note · Task 05</div>
+        <div class="project-open-hint">View Report →</div>
       </div>
       <div class="project-info">
         <div class="project-tag">Diplomatic Writing · Political Analysis · 2026</div>
         <h3>Briefing Note: Ireland Socio-Economic Developments</h3>
-        <p>Produced a diplomatic intelligence briefing on emerging civic unrest in Ireland — covering agricultural protests, cost-of-living demonstrations, and Shannon Airport activist proceedings. Forecast: low-intensity protracted instability. Recommended constructive stakeholder engagement and enhanced OSINT monitoring.</p>
+        <p>Diplomatic intelligence briefing on civic unrest in Ireland — agricultural protests, cost-of-living demonstrations, Shannon Airport proceedings. Forecast: low-intensity protracted instability.</p>
         <div class="project-meta">
           <span>Role: Political Analyst</span>
           <span>Tool: OSINT · Media Monitoring</span>
@@ -214,19 +249,21 @@
       </div>
     </div>
 
-    <!-- Task 6: Portfolio Website -->
-    <div class="project-card reveal">
-      <div class="project-img placeholder-img">
-        <div class="placeholder-icon">💻</div>
+    <!-- Task 6 -->
+    <div class="project-card reveal" onclick="openModal('modal06')">
+      <div class="project-img placeholder-img" style="background: linear-gradient(135deg, #111, #1a1a2e);">
+        <div class="placeholder-flag" style="font-size:13px;letter-spacing:0.1em;">HTML</div>
+        <div class="placeholder-sub">WEB DEVELOPMENT</div>
         <div class="project-overlay">Web Dev · Task 06</div>
+        <div class="project-open-hint">View Report →</div>
       </div>
       <div class="project-info">
         <div class="project-tag">Web Development · HTML/CSS/JS · 2025</div>
         <h3>Personal Portfolio Website</h3>
-        <p>Designed and developed this full portfolio from scratch using HTML5, CSS3, and vanilla JavaScript. Features: scroll-reveal animations, hide-on-scroll navbar, side navigation dots, embedded video, and responsive design. Deployed on GitHub Pages.</p>
+        <p>Designed and developed this full portfolio from scratch using HTML5, CSS3, and vanilla JavaScript. Scroll-reveal animations, responsive design, deployed on GitHub Pages.</p>
         <div class="project-meta">
           <span>Role: Designer & Developer</span>
-          <span>Tool: HTML · CSS · JavaScript · GitHub</span>
+          <span>Tool: HTML · CSS · JavaScript</span>
         </div>
       </div>
     </div>
@@ -288,42 +325,42 @@
 
       <div class="startup-block reveal">
         <div class="startup-block-img"><img src="Снимок%20экрана%202026-02-28%20195253.png" alt="Crisis Heatmap"></div>
-        <div class="startup-icon">⚠️</div>
+        <div class="startup-icon-label">01</div>
         <h4>The Problem</h4>
         <p>Businesses and NGOs entering emerging markets in Central Asia, Eastern Europe, and the Middle East have no reliable, affordable early-warning system for diplomatic crises, sanctions, or conflict escalation. They rely on expensive consultants or outdated reports.</p>
       </div>
 
       <div class="startup-block reveal">
         <div class="startup-block-img"><img src="Снимок%20экрана%202026-02-28%20195406.png" alt="Target Market Map"></div>
-        <div class="startup-icon">🎯</div>
+        <div class="startup-icon-label">02</div>
         <h4>Target Market</h4>
         <p>SME exporters, international NGOs, investment funds with emerging market exposure, and government agencies in Central Asia. Initial focus: Kazakhstan (92%), Uzbekistan (85%), Kyrgyzstan (78%), Tajikistan (70%), Turkmenistan (55%).</p>
       </div>
 
       <div class="startup-block reveal">
         <div class="startup-block-img"><img src="Снимок%20экрана%202026-02-28%20195419.png" alt="Subscription Plans"></div>
-        <div class="startup-icon">💳</div>
+        <div class="startup-icon-label">03</div>
         <h4>Business Model</h4>
         <p>SaaS subscription: <strong>Free</strong> for NGOs & universities (5 monitors, weekly digest). <strong>$99/mo</strong> for SMEs (25 monitors, real-time alerts, AI analysis). <strong>$499/mo</strong> Enterprise (unlimited, full API, dedicated analyst, SLA).</p>
       </div>
 
       <div class="startup-block reveal">
         <div class="startup-block-img"><img src="Снимок%20экрана%202026-02-28%20195430.png" alt="Technical Architecture"></div>
-        <div class="startup-icon">⚙️</div>
+        <div class="startup-icon-label">04</div>
         <h4>Technology</h4>
         <p>Data pipeline: <strong>200+ news outlets</strong>, UN documents, social media, gov portals, sanction DBs → NLP extraction in 15 languages → Risk Engine (Score 0–100, trend analysis, forecasting) → delivery via Dashboard, REST API, Telegram bot, PDF reports. Alert latency: <strong>&lt;5 min</strong>. Uptime SLA: <strong>99.2%</strong>.</p>
       </div>
 
       <div class="startup-block reveal">
         <div class="startup-block-img"><img src="Снимок%20экрана%202026-02-28%20195439.png" alt="Impact Metrics Year 1-3"></div>
-        <div class="startup-icon">📈</div>
+        <div class="startup-icon-label">05</div>
         <h4>Impact & Projections</h4>
         <p>Year 1–3 targets: <strong>500+ organizations</strong> protected, <strong>94 countries</strong> covered, <strong>$2.3M ARR</strong> by Year 2, <strong>72% crisis detection accuracy</strong>. Democratizing geopolitical intelligence — making it accessible to organizations that cannot afford McKinsey or Oxford Analytica.</p>
       </div>
 
       <div class="startup-block reveal">
         <div class="startup-block-img"><img src="Снимок%20экрана%202026-02-28%20195355.png" alt="Live Dashboard"></div>
-        <div class="startup-icon">🛰️</div>
+        <div class="startup-icon-label">06</div>
         <h4>Our Solution</h4>
         <p><strong>GeoSignal</strong> is an AI-powered platform that monitors diplomatic signals, UN resolutions, sanction announcements, and conflict indicators in real-time — delivering risk scores and alerts to decision-makers via a clean dashboard and REST API.</p>
       </div>
@@ -399,9 +436,6 @@
     <a href="https://linkedin.com/in/mereymautova" class="contact-link" target="_blank">
       <span class="contact-link-icon">in</span> LinkedIn
     </a>
-    <a href="https://github.com/qbert2004" class="contact-link" target="_blank">
-      <span class="contact-link-icon">⌥</span> GitHub
-    </a>
     <a href="https://youtube.com" class="contact-link" target="_blank">
       <span class="contact-link-icon">▶</span> YouTube
     </a>
@@ -420,6 +454,264 @@
   <span>Ablai Khan University · Digitization of Professional Activity</span>
   <span>Almaty, Kazakhstan</span>
 </footer>
+
+<!-- ══════════════ MODALS ══════════════ -->
+
+<!-- Modal 01: Military Expenditure -->
+<div class="modal" id="modal01">
+  <div class="modal-backdrop" onclick="closeModal('modal01')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal01')">&#x2715;</button>
+    <div class="modal-tag">Power BI · Task 01 · 2025</div>
+    <h2 class="modal-title">Military Expenditure<br><em>% of GDP</em></h2>
+    <div class="modal-img-wrap"><img src="таск1.png" alt="Military Expenditure Dashboard"></div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Overview</div>
+        <p>Built a multi-visual Power BI dashboard analyzing global military spending as a percentage of GDP across 100+ countries. The dashboard integrates a world map, pie chart, bar chart ranking, and an AI-powered Q&A panel to enable dynamic exploration of the data.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Key Findings</div>
+        <ul class="modal-list">
+          <li>Ukraine's military spending rose sharply in 2014–2015, coinciding with the annexation of Crimea and the start of armed conflict in eastern Ukraine.</li>
+          <li>From 2014 onward, Ukraine shows a clear structural break and a sustained upward trend, with particularly strong acceleration after 2021–2022.</li>
+          <li>After 2014–2015, U.S. military spending initially stagnated or slightly declined, and then started to increase again in the late 2010s.</li>
+          <li>Oman and Saudi Arabia consistently rank among the highest spenders as a share of GDP, reflecting regional security dynamics.</li>
+          <li>The AI Q&A panel enables on-demand analysis, showing country-by-year rankings sorted by total value as a treemap.</li>
+        </ul>
+      </div>
+      <div class="modal-meta-row">
+        <div class="modal-meta-item"><span class="mmi-label">Role</span><span class="mmi-val">Lead Analyst & Designer</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Tool</span><span class="mmi-val">Microsoft Power BI</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Data</span><span class="mmi-val">100+ Countries</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Year</span><span class="mmi-val">2025</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 02: Ireland Power BI -->
+<div class="modal" id="modal02">
+  <div class="modal-backdrop" onclick="closeModal('modal02')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal02')">&#x2715;</button>
+    <div class="modal-tag">Power BI · Task 02 · 2025</div>
+    <h2 class="modal-title">Ireland: Military &<br><em>Economic Dashboard</em></h2>
+    <div class="modal-img-wrap"><img src="Снимок%20экрана%202026-02-28%20в%2017.43.50.png" alt="Ireland Dashboard"></div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Overview</div>
+        <p>Interactive Power BI dashboard analyzing Ireland's military expenditure, high-tech exports, FDI inflows, and GDP growth from 1960 to 2024. Multi-layered time-series visualizations reveal the structural economic transformation of Ireland over six decades.</p>
+      </div>
+      <div class="modal-stats-row">
+        <div class="modal-stat"><span class="ms-num">0.24%</span><span class="ms-label">Military Expenditure / GDP</span></div>
+        <div class="modal-stat"><span class="ms-num">2.60%</span><span class="ms-label">GDP Growth (2024)</span></div>
+        <div class="modal-stat"><span class="ms-num">1960</span><span class="ms-label">Data range start</span></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Key Findings</div>
+        <ul class="modal-list">
+          <li>Ireland maintains one of the lowest military expenditure rates in the EU at 0.24% of GDP, reflecting its traditional policy of military neutrality.</li>
+          <li>High-tech exports show a dramatic rise from 2000 onward, reflecting Ireland's emergence as a European hub for multinational technology corporations.</li>
+          <li>FDI inflows peaked in the early 2000s during the Celtic Tiger period and show significant volatility linked to global financial cycles.</li>
+          <li>GDP growth of 2.60% in 2024 reflects continued economic resilience despite housing pressures and EU regulatory constraints.</li>
+          <li>The divergence between military expenditure and high-tech export growth confirms Ireland's strategy of economic security over military investment.</li>
+        </ul>
+      </div>
+      <div class="modal-meta-row">
+        <div class="modal-meta-item"><span class="mmi-label">Role</span><span class="mmi-val">Data Analyst</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Tool</span><span class="mmi-val">Microsoft Power BI</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Period</span><span class="mmi-val">1960–2024</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Year</span><span class="mmi-val">2025</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 03: Miro Leadership -->
+<div class="modal" id="modal03">
+  <div class="modal-backdrop" onclick="closeModal('modal03')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal03')">&#x2715;</button>
+    <div class="modal-tag">Miro · Task 03 · 2025</div>
+    <h2 class="modal-title">International Leader<br><em>Portrait Analysis</em></h2>
+    <div class="modal-img-wrap"><img src="таск2.png" alt="Miro Leadership Board"></div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Overview</div>
+        <p>A collaborative Miro board mapping the comprehensive profile of an ideal international leader. The project synthesizes leadership theory, diplomatic practice, and contemporary geopolitical demands into a structured visual framework.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Core Leadership Traits Identified</div>
+        <div class="modal-traits-grid">
+          <span class="modal-trait">Strategic</span>
+          <span class="modal-trait">Adaptive</span>
+          <span class="modal-trait">Ethical</span>
+          <span class="modal-trait">Decisive</span>
+          <span class="modal-trait">Competent</span>
+          <span class="modal-trait">Communicative</span>
+          <span class="modal-trait">Responsible</span>
+          <span class="modal-trait">Diplomatic</span>
+          <span class="modal-trait">Analytical</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Theoretical Framework</div>
+        <ul class="modal-list">
+          <li>Findings compared against <strong>Adaptive Leadership Theory</strong> — the ability to mobilize people to tackle difficult challenges and thrive in complex environments.</li>
+          <li>Cross-referenced with <strong>Transformational Leadership Theory</strong> — inspiring followers through vision, values, and by modeling integrity.</li>
+          <li>The analysis revealed that effective international leaders combine rational strategic thinking with high emotional intelligence and cross-cultural competence.</li>
+          <li>The portrait confirms that modern diplomacy requires leaders who are simultaneously analysts, communicators, and decision-makers under uncertainty.</li>
+        </ul>
+      </div>
+      <div class="modal-meta-row">
+        <div class="modal-meta-item"><span class="mmi-label">Role</span><span class="mmi-val">Researcher & Analyst</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Tool</span><span class="mmi-val">Miro</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Method</span><span class="mmi-val">Leadership Theory</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Year</span><span class="mmi-val">2025</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 04: Briefing Note Paris -->
+<div class="modal" id="modal04">
+  <div class="modal-backdrop" onclick="closeModal('modal04')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal04')">&#x2715;</button>
+    <div class="modal-tag">Diplomatic Writing · Task 04 · 2026</div>
+    <h2 class="modal-title">Briefing Note:<br><em>Paris Protest Security</em></h2>
+    <div class="modal-briefing-header">
+      <div class="mbh-line">U.S. DEPARTMENT OF STATE</div>
+      <div class="mbh-line">BUREAU OF SOUTH AND CENTRAL ASIAN AFFAIRS</div>
+      <div class="mbh-line">BRIEFING NOTE — CONFIDENTIAL</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Subject</div>
+        <p>Security risk assessment for diplomatic personnel and U.S. interests in Paris, France, during an escalating period of government reform protests. Produced in formal U.S. Department of State briefing note format.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Methodology</div>
+        <ul class="modal-list">
+          <li>OSINT monitoring across BBC, France24, Twitter/X, Reddit, and Telegram protest channels.</li>
+          <li>AI-assisted scenario forecasting using probabilistic risk modelling.</li>
+          <li>Structured analytical frameworks adapted from U.S. State Department reporting standards.</li>
+          <li>Cross-referencing with historical protest escalation patterns in Western European democracies.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Key Recommendations</div>
+        <ul class="modal-list">
+          <li>Enhanced situational awareness protocols for diplomatic staff in central Paris arrondissements.</li>
+          <li>Temporary avoidance of demonstration convergence zones on designated protest days.</li>
+          <li>Maintained communication channels with French Ministry of Interior and Prefecture de Police.</li>
+          <li>Continuous OSINT monitoring to detect escalation indicators including crowd size, police response, and social media sentiment shifts.</li>
+        </ul>
+      </div>
+      <div class="modal-forecast-box">
+        <div class="mfb-label">RISK ASSESSMENT</div>
+        <p>Medium-level security risk. Protests are constitutionally protected and police-managed. No immediate threat to diplomatic facilities. Recommend heightened awareness over a 30-day monitoring window.</p>
+      </div>
+      <div class="modal-meta-row">
+        <div class="modal-meta-item"><span class="mmi-label">Role</span><span class="mmi-val">Senior Political Analyst</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Tool</span><span class="mmi-val">OSINT · AI Forecasting</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Format</span><span class="mmi-val">State Dept. Briefing</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Year</span><span class="mmi-val">2026</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 05: Briefing Note Ireland -->
+<div class="modal" id="modal05">
+  <div class="modal-backdrop" onclick="closeModal('modal05')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal05')">&#x2715;</button>
+    <div class="modal-tag">Political Analysis · Task 05 · 2026</div>
+    <h2 class="modal-title">Briefing Note:<br><em>Ireland Socio-Economic</em></h2>
+    <div class="modal-briefing-header">
+      <div class="mbh-line">DIPLOMATIC INTELLIGENCE REPORT</div>
+      <div class="mbh-line">IRELAND — CIVIC STABILITY ASSESSMENT</div>
+      <div class="mbh-line">OSINT-BASED · RESTRICTED DISTRIBUTION</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Subject</div>
+        <p>Assessment of emerging civic instability in Ireland, covering three primary protest vectors: agricultural sector demonstrations, cost-of-living marches in Dublin, and Shannon Airport activist proceedings related to U.S. military transit permissions.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Protest Vectors Analyzed</div>
+        <ul class="modal-list">
+          <li><strong>Agricultural protests</strong> — driven by EU nitrates directive and land-use regulations disproportionately affecting Irish farmers. Organized through IFA and ICMSA networks.</li>
+          <li><strong>Cost-of-living demonstrations</strong> — urban-focused unrest linked to Ireland's acute housing crisis, rising rents, and insufficient residential construction pipeline.</li>
+          <li><strong>Shannon Airport proceedings</strong> — civil society challenge to government policy allowing U.S. military aircraft transit, raising questions about Irish neutrality.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">OSINT Sources</div>
+        <ul class="modal-list">
+          <li>Media monitoring: BBC, The Irish Times, RTE, The Journal, Reuters.</li>
+          <li>Social media: Twitter/X protest hashtags, Facebook event tracking, Telegram community channels.</li>
+          <li>Government sources: Dail Eireann debates, Department of Agriculture statements, An Garda Siochana briefings.</li>
+        </ul>
+      </div>
+      <div class="modal-forecast-box">
+        <div class="mfb-label">FORECAST</div>
+        <p>Low-intensity protracted instability. No systemic threat to political institutions. Recommended: constructive stakeholder engagement, enhanced OSINT monitoring, and proactive government communication strategy to prevent escalation.</p>
+      </div>
+      <div class="modal-meta-row">
+        <div class="modal-meta-item"><span class="mmi-label">Role</span><span class="mmi-val">Political Analyst</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Tool</span><span class="mmi-val">OSINT · Media Monitoring</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Country</span><span class="mmi-val">Ireland</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Year</span><span class="mmi-val">2026</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 06: Portfolio Website -->
+<div class="modal" id="modal06">
+  <div class="modal-backdrop" onclick="closeModal('modal06')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal06')">&#x2715;</button>
+    <div class="modal-tag">Web Development · Task 06 · 2025</div>
+    <h2 class="modal-title">Personal<br><em>Portfolio Website</em></h2>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Overview</div>
+        <p>Designed and developed a full personal portfolio website from scratch using HTML5, CSS3, and vanilla JavaScript. The project demonstrates the ability to translate professional identity into a digital product without relying on templates or frameworks.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Technical Features</div>
+        <ul class="modal-list">
+          <li>Scroll-reveal animations using the Intersection Observer API for smooth entrance effects.</li>
+          <li>Hide-on-scroll navbar that auto-hides when scrolling down and reappears on scroll up.</li>
+          <li>Side navigation dots with active state tracking per section.</li>
+          <li>Custom video player with play/pause, progress bar, mute, and fullscreen controls.</li>
+          <li>Click-to-copy email functionality with confirmation feedback.</li>
+          <li>Fully responsive design for mobile, tablet, and desktop viewports.</li>
+          <li>Project modal system — each task opens a detailed analytical report overlay.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Design Principles</div>
+        <ul class="modal-list">
+          <li>Dark editorial aesthetic inspired by high-end publishing and diplomatic communication.</li>
+          <li>Typography: Cormorant Garamond for editorial elegance, DM Mono for data precision.</li>
+          <li>Color palette: near-black backgrounds with warm amber and cream accents.</li>
+          <li>Deployed on GitHub Pages with custom domain support.</li>
+        </ul>
+      </div>
+      <div class="modal-meta-row">
+        <div class="modal-meta-item"><span class="mmi-label">Role</span><span class="mmi-val">Designer & Developer</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Stack</span><span class="mmi-val">HTML · CSS · JS</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Deploy</span><span class="mmi-val">GitHub Pages</span></div>
+        <div class="modal-meta-item"><span class="mmi-label">Year</span><span class="mmi-val">2025</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

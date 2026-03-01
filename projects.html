@@ -370,6 +370,84 @@
       .findings-wrap { padding: 28px 20px; }
       .other-projects { padding: 32px 20px 48px; }
     }
+    /* ── IRELAND FLAG HERO ── */
+    .ireland-flag-hero {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      margin: 0;
+    }
+    .ireland-flag-stripes {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      opacity: 0.07;
+    }
+    .ifs-green { background: #169b62; }
+    .ifs-white { background: #fff; }
+    .ifs-orange { background: #ff883e; }
+    .ireland-flag-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.2) 100%);
+    }
+    .ireland-flag-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 60px 50px;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .ireland-flag-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: #169b62;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ireland-flag-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: #169b62;
+    }
+    .ireland-flag-title {
+      font-size: clamp(44px, 7vw, 96px);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .ireland-flag-title .ie-green { color: #169b62; }
+    .ireland-flag-title .ie-orange { color: #ff883e; font-style: italic; }
+    .ireland-flag-desc {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+      max-width: 500px;
+    }
+    .ireland-flag-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .ireland-flag-bar span:nth-child(1) { background: #169b62; }
+    .ireland-flag-bar span:nth-child(2) { background: rgba(255,255,255,0.3); }
+    .ireland-flag-bar span:nth-child(3) { background: #ff883e; }
+
+    @media (max-width: 600px) {
+      .ireland-flag-content { padding: 40px 20px 36px; }
+    }
   </style>
 </head>
 <body>
@@ -395,6 +473,25 @@
 </div>
 
 <div class="divider"></div>
+
+<!-- ══════════════ IRELAND FLAG HERO ══════════════ -->
+<div class="ireland-flag-hero">
+  <div class="ireland-flag-stripes">
+    <div class="ifs-green"></div>
+    <div class="ifs-white"></div>
+    <div class="ifs-orange"></div>
+  </div>
+  <div class="ireland-flag-overlay"></div>
+  <div class="ireland-flag-content">
+    <div class="ireland-flag-eyebrow">Featured Research · In-Depth Country Analysis</div>
+    <h2 class="ireland-flag-title">
+      <span class="ie-green">Ireland</span><br>
+      <em class="ie-orange">Analysis</em>
+    </h2>
+    <p class="ireland-flag-desc">Power BI · OSINT · Diplomatic Intelligence · 1960–2026</p>
+  </div>
+  <div class="ireland-flag-bar"><span></span><span></span><span></span></div>
+</div>
 
 <!-- ══════════════ IRELAND FEATURE ══════════════ -->
 <div class="ireland-feature">

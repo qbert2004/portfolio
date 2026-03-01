@@ -58,3 +58,88 @@ if (emailEl) {
     });
   });
 }
+
+// ── PROJECT MODALS ──
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+// ── CINEMATIC VIDEO PLAYER ──
+const mainVideo = document.getElementById('mainVideo');
+const vcOverlay = document.getElementById('vcOverlay');
+const vcPlayBtn = document.getElementById('vcPlayBtn');
+const vcProgress = document.getElementById('vcProgress');
+const vcTime = document.getElementById('vcTime');
+const vcMute = document.getElementById('vcMute');
+const vcFull = document.getElementById('vcFull');
+const vcProgressBar = document.querySelector('.vc-progress-bar');
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
+}
+
+if (mainVideo) {
+  vcOverlay.addEventListener('click', () => {
+    if (mainVideo.paused) {
+      mainVideo.play();
+      vcOverlay.classList.add('playing');
+    } else {
+      mainVideo.pause();
+      vcOverlay.classList.remove('playing');
+    }
+  });
+
+  mainVideo.addEventListener('timeupdate', () => {
+    if (mainVideo.duration) {
+      vcProgress.style.width = (mainVideo.currentTime / mainVideo.duration * 100) + '%';
+      vcTime.textContent = formatTime(mainVideo.currentTime) + ' / ' + formatTime(mainVideo.duration);
+    }
+  });
+
+  mainVideo.addEventListener('ended', () => {
+    vcOverlay.classList.remove('playing');
+    vcProgress.style.width = '0%';
+  });
+
+  if (vcProgressBar) {
+    vcProgressBar.addEventListener('click', (e) => {
+      const rect = vcProgressBar.getBoundingClientRect();
+      const ratio = (e.clientX - rect.left) / rect.width;
+      mainVideo.currentTime = ratio * mainVideo.duration;
+    });
+  }
+
+  if (vcMute) {
+    vcMute.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mainVideo.muted = !mainVideo.muted;
+      vcMute.style.opacity = mainVideo.muted ? '0.4' : '1';
+    });
+  }
+
+  if (vcFull) {
+    vcFull.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mainVideo.requestFullscreen) mainVideo.requestFullscreen();
+    });
+  }
+}
