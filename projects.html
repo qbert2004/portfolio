@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Merey Mautova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PROJECTS PAGE SPECIFIC ── */
+    .page-hero {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 140px 60px 60px;
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .page-hero-bg {
+      position: absolute;
+      top: 50%; right: -60px;
+      transform: translateY(-50%);
+      font-size: clamp(180px, 28vw, 360px);
+      font-weight: 600;
+      color: rgba(255,255,255,0.018);
+      font-family: var(--font-serif);
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.05em;
+    }
+    .back-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      transition: color 0.3s;
+    }
+    .back-link:hover { color: var(--accent2); }
+    .page-hero h1 {
+      font-size: clamp(52px, 9vw, 120px);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 em { color: var(--accent2); font-style: italic; }
+    .page-hero-sub {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      max-width: 600px;
+    }
+
+    /* ── IRELAND FEATURE ── */
+    .ireland-feature {
+      padding: 80px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .feature-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+    .ireland-hero-card {
+      border: 1px solid rgba(196,168,130,0.25);
+      background: linear-gradient(135deg, rgba(139,111,78,0.07) 0%, rgba(10,10,10,0) 60%);
+      padding: 60px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ireland-hero-card::before {
+      content: '🇮🇪';
+      position: absolute;
+      top: -10px; right: 40px;
+      font-size: 180px;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+    .ireland-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .ireland-title {
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .ireland-title em { color: var(--accent2); font-style: italic; }
+    .ireland-lead {
+      font-size: 16px;
+      color: rgba(248,246,241,0.72);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .ireland-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .ireland-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 6px 14px;
+      border: 1px solid rgba(196,168,130,0.3);
+      color: var(--accent2);
+    }
+    .ireland-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .ireland-stat-box {
+      border: 1px solid rgba(196,168,130,0.15);
+      padding: 28px 24px;
+      background: rgba(0,0,0,0.3);
+      transition: border-color 0.3s;
+    }
+    .ireland-stat-box:hover { border-color: rgba(196,168,130,0.4); }
+    .ireland-stat-num {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--accent2);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .ireland-stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── IRELAND DEEP DIVE ── */
+    .ireland-deep {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .deep-card {
+      border: 1px solid rgba(196,168,130,0.12);
+      padding: 36px 28px;
+      transition: border-color 0.3s, background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .deep-card:hover {
+      border-color: rgba(196,168,130,0.4);
+      background: rgba(139,111,78,0.04);
+    }
+    .deep-card-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+    .deep-card h4 {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--accent2);
+      margin-bottom: 14px;
+      font-family: var(--font-serif);
+    }
+    .deep-card p {
+      font-size: 14px;
+      color: rgba(248,246,241,0.68);
+      line-height: 1.7;
+    }
+
+    /* ── DASHBOARD IMAGE ── */
+    .dashboard-wrap {
+      margin-bottom: 48px;
+    }
+    .dashboard-img-frame {
+      border: 1px solid rgba(196,168,130,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    .dashboard-img-frame img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .dashboard-img-frame:hover img { transform: scale(1.02); }
+    .dashboard-caption {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ── KEY FINDINGS ── */
+    .findings-wrap {
+      border: 1px solid rgba(196,168,130,0.15);
+      padding: 48px;
+      margin-bottom: 48px;
+      background: linear-gradient(135deg, rgba(139,111,78,0.04), transparent);
+    }
+    .findings-wrap h3 {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 32px;
+      color: var(--accent2);
+    }
+    .findings-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .findings-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: rgba(248,246,241,0.75);
+      line-height: 1.65;
+    }
+    .findings-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── BRIEFING NOTE ── */
+    .briefing-card {
+      border: 1px solid rgba(196,168,130,0.2);
+      padding: 52px;
+      margin-bottom: 48px;
+      background: linear-gradient(135deg, rgba(13,33,55,0.4), rgba(26,58,42,0.3));
+      position: relative;
+      overflow: hidden;
+    }
+    .briefing-card::before {
+      content: '🇮🇪';
+      position: absolute;
+      bottom: -20px; right: 20px;
+      font-size: 160px;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .briefing-header {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .briefing-title {
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 300;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+    .briefing-title em { color: var(--accent2); font-style: italic; }
+    .briefing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .briefing-block h5 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .briefing-block p {
+      font-size: 14px;
+      color: rgba(248,246,241,0.7);
+      line-height: 1.7;
+    }
+    .briefing-forecast {
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(196,168,130,0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .forecast-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--black);
+      background: var(--accent);
+      padding: 6px 14px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .forecast-text {
+      font-size: 14px;
+      color: rgba(248,246,241,0.7);
+      line-height: 1.7;
+    }
+
+    /* ── OTHER PROJECTS ── */
+    .other-projects {
+      padding: 60px 60px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .other-projects h2 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300;
+      margin-bottom: 48px;
+    }
+    .other-projects h2 em { color: var(--accent2); font-style: italic; }
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page-hero { padding: 120px 32px 48px; }
+      .ireland-feature { padding: 60px 32px; }
+      .ireland-hero-card { padding: 36px; }
+      .ireland-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ireland-deep { grid-template-columns: 1fr; }
+      .findings-list { grid-template-columns: 1fr; }
+      .briefing-card { padding: 36px; }
+      .briefing-grid { grid-template-columns: 1fr; gap: 24px; }
+      .other-projects { padding: 40px 32px 60px; }
+    }
+    @media (max-width: 600px) {
+      .page-hero { padding: 100px 20px 40px; }
+      .ireland-feature { padding: 40px 20px; }
+      .ireland-hero-card { padding: 24px; }
+      .ireland-stats-grid { grid-template-columns: 1fr 1fr; }
+      .findings-wrap { padding: 28px 20px; }
+      .other-projects { padding: 32px 20px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-name">Merey Mautova</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#startup">Startup</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">IR</div>
+  <a href="index.html" class="back-link reveal">← Back to Portfolio</a>
+  <h1 class="reveal">Projects &<br><em>Research</em></h1>
+  <p class="page-hero-sub reveal">Geopolitical analysis · Data visualization · Diplomatic intelligence</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ IRELAND FEATURE ══════════════ -->
+<div class="ireland-feature">
+
+  <div class="feature-label">Featured Research</div>
+
+  <!-- HERO CARD -->
+  <div class="ireland-hero-card reveal">
+    <div class="ireland-hero-grid">
+      <div>
+        <div class="feature-label" style="margin-bottom:12px;">Ireland · In-Depth Analysis</div>
+        <h2 class="ireland-title">Ireland: Military,<br>Economic &<br><em>Political Analysis</em></h2>
+        <p class="ireland-lead">A comprehensive multi-dimensional study of Ireland — examining military expenditure trends, economic performance, FDI dynamics, and emerging civic instability. Combining Power BI dashboards, OSINT monitoring, and diplomatic intelligence reporting.</p>
+        <div class="ireland-tags">
+          <span class="ireland-tag">Power BI</span>
+          <span class="ireland-tag">OSINT</span>
+          <span class="ireland-tag">Economic Analysis</span>
+          <span class="ireland-tag">Diplomatic Writing</span>
+          <span class="ireland-tag">Data Visualization</span>
+          <span class="ireland-tag">2025–2026</span>
+        </div>
+      </div>
+      <div class="ireland-stats-grid">
+        <div class="ireland-stat-box reveal">
+          <div class="ireland-stat-num">0.24%</div>
+          <div class="ireland-stat-label">Military Expenditure of GDP</div>
+        </div>
+        <div class="ireland-stat-box reveal">
+          <div class="ireland-stat-num">2.60%</div>
+          <div class="ireland-stat-label">GDP Growth Rate (2024)</div>
+        </div>
+        <div class="ireland-stat-box reveal">
+          <div class="ireland-stat-num">1960</div>
+          <div class="ireland-stat-label">Data Range Start</div>
+        </div>
+        <div class="ireland-stat-box reveal">
+          <div class="ireland-stat-num">200+</div>
+          <div class="ireland-stat-label">Data Points Analyzed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD IMAGE -->
+  <div class="dashboard-wrap reveal">
+    <div class="dashboard-img-frame">
+      <img src="таск1.png" alt="Ireland Power BI Dashboard">
+    </div>
+    <p class="dashboard-caption">Power BI Dashboard — Ireland Military & Economic Analysis (1960–2024)</p>
+  </div>
+
+  <!-- DEEP DIVE CARDS -->
+  <div class="ireland-deep">
+    <div class="deep-card reveal">
+      <div class="deep-card-num">01 / POWER BI</div>
+      <h4>Military & Economic Dashboard</h4>
+      <p>Interactive Power BI dashboard correlating Ireland's military expenditure, high-tech exports, FDI inflows, and GDP growth from 1960 to 2024. Multi-layered time-series visualizations reveal structural economic transformations over six decades.</p>
+    </div>
+    <div class="deep-card reveal">
+      <div class="deep-card-num">02 / OSINT</div>
+      <h4>Civic Instability Monitoring</h4>
+      <p>Real-time OSINT monitoring of emerging protest movements in Ireland — agricultural demonstrations, cost-of-living marches, and Shannon Airport activist proceedings. Sources: BBC, The Irish Times, Reuters, Twitter/X, Reddit, Telegram channels.</p>
+    </div>
+    <div class="deep-card reveal">
+      <div class="deep-card-num">03 / DIPLOMATIC</div>
+      <h4>Intelligence Briefing Note</h4>
+      <p>Formal diplomatic intelligence briefing produced in U.S. Department of State format. Covers risk assessment, scenario forecasting, and actionable policy recommendations for stakeholders operating in or engaging with Ireland.</p>
+    </div>
+  </div>
+
+  <!-- KEY FINDINGS -->
+  <div class="findings-wrap reveal">
+    <h3>Key Findings</h3>
+    <ul class="findings-list">
+      <li>Ireland maintains one of the lowest military expenditure rates in the EU at 0.24% of GDP, reflecting its traditional policy of military neutrality.</li>
+      <li>GDP growth of 2.60% in 2024 masks structural vulnerabilities, with heavy dependence on multinational corporations and FDI inflows from the United States.</li>
+      <li>High-tech exports account for a disproportionately large share of GDP, underscoring Ireland's role as a European hub for tech giants including Apple, Google, and Meta.</li>
+      <li>Emerging agricultural protests signal growing rural discontent linked to EU environmental regulations, particularly around nitrates and land-use policies.</li>
+      <li>Cost-of-living demonstrations in Dublin reflect a housing crisis exacerbated by rapid population growth and insufficient residential construction.</li>
+      <li>Shannon Airport activism highlights Ireland's complex position on neutrality, with protests targeting U.S. military transit permissions.</li>
+      <li>Forecast: low-intensity protracted instability with no risk of systemic political disruption in the near term (12-month outlook).</li>
+      <li>Recommended policy response: constructive stakeholder engagement, enhanced OSINT monitoring, and proactive government communication strategy.</li>
+    </ul>
+  </div>
+
+  <!-- BRIEFING NOTE CARD -->
+  <div class="briefing-card reveal">
+    <div class="briefing-header">Diplomatic Intelligence · Briefing Note</div>
+    <h3 class="briefing-title">Ireland Socio-Economic<br><em>Developments & Civic Unrest</em></h3>
+    <div class="briefing-grid">
+      <div class="briefing-block">
+        <h5>Scope</h5>
+        <p>Assessment of emerging civic instability in Ireland covering agricultural protests, cost-of-living demonstrations, and Shannon Airport activist proceedings. Produced in standard diplomatic briefing format.</p>
+      </div>
+      <div class="briefing-block">
+        <h5>Methodology</h5>
+        <p>OSINT monitoring across 15+ media sources, social media tracking, AI-assisted scenario modelling, and structured analytical frameworks adapted from U.S. State Department reporting standards.</p>
+      </div>
+      <div class="briefing-block">
+        <h5>Audience</h5>
+        <p>Decision-makers, diplomatic missions, international NGOs, and investment funds with Irish or EU exposure requiring timely geopolitical risk intelligence.</p>
+      </div>
+    </div>
+    <div class="briefing-forecast">
+      <div class="forecast-badge">FORECAST</div>
+      <p class="forecast-text">Low-intensity protracted instability. No systemic threat to political institutions. Recommended: constructive stakeholder engagement and enhanced OSINT monitoring to track escalation indicators in agricultural and housing protest movements.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ OTHER PROJECTS ══════════════ -->
+<div class="other-projects">
+  <h2>Other<br><em>Projects</em></h2>
+
+  <div class="other-grid">
+
+    <!-- Military Expenditure Global -->
+    <div class="project-card reveal">
+      <div class="project-img">
+        <img src="Снимок%20экрана%202026-02-28%20в%2017.43.50.png" alt="Power BI Military Expenditure % of GDP">
+        <div class="project-overlay">Power BI · Task 01</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">Power BI · Data Visualization · 2025</div>
+        <h3>Military Expenditure % of GDP</h3>
+        <p>Multi-visual Power BI dashboard analyzing global military spending as % of GDP across 100+ countries. World map, pie chart, bar chart ranking, and AI Q&A panel. Key insight: Ukraine's military spending rose sharply in 2014–2015 coinciding with the annexation of Crimea.</p>
+        <div class="project-meta">
+          <span>Role: Lead Analyst & Designer</span>
+          <span>Tool: Microsoft Power BI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Miro Leadership -->
+    <div class="project-card reveal">
+      <div class="project-img">
+        <img src="таск2.png" alt="Miro Leadership Portrait Analysis">
+        <div class="project-overlay">Miro Board · Task 02</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">Miro · Leadership Analysis · 2025</div>
+        <h3>International Leader Portrait Analysis</h3>
+        <p>Miro board mapping the profile of an ideal international leader. Core traits identified: Strategic, Adaptive, Ethical, Decisive, Competent, Communicative, Responsible, Diplomatic, Analytical. Compared against Adaptive and Transformational Leadership theories.</p>
+        <div class="project-meta">
+          <span>Role: Researcher & Analyst</span>
+          <span>Tool: Miro · Leadership Theory</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Briefing Note Paris -->
+    <div class="project-card reveal">
+      <div class="project-img placeholder-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+        <div class="placeholder-icon">🇫🇷</div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;color:#c4a882;letter-spacing:0.1em;margin-top:8px;">U.S. DEPT. OF STATE</div>
+        <div class="project-overlay">Briefing Note · Task 03</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">Diplomatic Writing · OSINT · 2026</div>
+        <h3>Briefing Note: Paris Protest Security Assessment</h3>
+        <p>Formal U.S. Department of State Briefing Note on security risks in Paris during government reform protests. OSINT monitoring (BBC, France24, Twitter, Reddit), AI-based scenario forecasting, and diplomatic recommendations.</p>
+        <div class="project-meta">
+          <span>Role: Senior Political Analyst</span>
+          <span>Tool: OSINT · AI Forecasting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Website -->
+    <div class="project-card reveal">
+      <div class="project-img placeholder-img">
+        <div class="placeholder-icon">💻</div>
+        <div class="project-overlay">Web Dev · Task 04</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">Web Development · HTML/CSS/JS · 2025</div>
+        <h3>Personal Portfolio Website</h3>
+        <p>Designed and developed this full portfolio from scratch using HTML5, CSS3, and vanilla JavaScript. Scroll-reveal animations, hide-on-scroll navbar, side navigation dots, embedded video, and responsive design. Deployed on GitHub Pages.</p>
+        <div class="project-meta">
+          <span>Role: Designer & Developer</span>
+          <span>Tool: HTML · CSS · JavaScript · GitHub</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 — Merey Mautova · International Relations Portfolio</span>
+  <span>Ablai Khan University · Digitization of Professional Activity</span>
+  <span>Almaty, Kazakhstan</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
